@@ -1,0 +1,20 @@
+.header{
+    
+}
+
+@media only screen and (min-width: 992px) {
+    .header{
+        border-radius: 4px;
+        background: #F8F9FA;
+        grid-area: header;
+        min-height: 303px;
+
+    }
+}
+@media only screen and (max-width: 991px) {
+    .header{
+        width: 100%;
+
+    }
+
+}

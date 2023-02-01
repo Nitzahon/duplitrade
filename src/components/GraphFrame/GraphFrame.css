@@ -1,0 +1,20 @@
+.graphframe{
+    background: #F8F9FA;
+    border-radius: 4px;
+    border:1px solid blue
+}
+
+@media only screen and (min-width: 992px) {
+    .graphframe{
+        grid-area: graphframe;
+        min-height: 300;
+
+    }
+}
+@media only screen and (max-width: 991px) {
+    .graphframe{
+        width: 100%;
+        
+    }
+
+}

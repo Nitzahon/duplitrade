@@ -1,0 +1,22 @@
+.hugbox{
+    background-color: red;
+}
+
+@media only screen and (min-width: 992px) {
+    .hugbox{
+        /* position:fixed; */
+        grid-area: hugbox;
+        width:335px;
+        min-height:315px;
+        height: fit-content;
+        /* left: 4fr;
+        top: 130px; */
+    }
+}
+@media only screen and (max-width: 991px) {
+    .hugbox{
+        display:none;
+        
+    }
+
+}

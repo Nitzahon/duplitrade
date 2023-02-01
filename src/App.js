@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import GraphFrame from './components/GraphFrame/GraphFrame';
+import Header from './components/Header/Header';
+import Hugbox from './components/Hugbox/Hugbox';
+import dataly from './constants/data.json';
 function App() {
+
+  const data = dataly;
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <Header {...data.broker}/>
+      <Hugbox />
+      <GraphFrame/>
+      </div>
     </div>
   );
 }
