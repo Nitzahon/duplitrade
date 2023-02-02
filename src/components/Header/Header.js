@@ -6,7 +6,7 @@ function Header(props) {
     // const broker = {...props,date:date.setDate(date.getDate() - 103*7 )}
   return (
     <div className='header'>
-        <Broker {...props}/>
+        <Broker/>
     </div>
   )
 }

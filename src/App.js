@@ -1,4 +1,5 @@
 import './App.css';
+
 import GraphFrame from './components/GraphFrame/GraphFrame';
 import Header from './components/Header/Header';
 import Hugbox from './components/Hugbox/Hugbox';
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <Header {...data.broker}/>
+        <Header/>
       <Hugbox />
       <GraphFrame/>
       </div>
