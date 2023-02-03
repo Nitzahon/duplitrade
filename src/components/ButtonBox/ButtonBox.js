@@ -11,6 +11,10 @@ function ButtonBox() {
        */}
        {/* <DirectCopyVector/> */}
        {/* <img src={directCopyVector}/> */}
+       <div className='signup'><span>Sign Up</span></div>
+       <div className='drawer'>Sign Up</div>
+       <div className='drawer'>Sign Up</div>
+       <div className='drawer'>Sign Up</div>
     </div>
   )
 }

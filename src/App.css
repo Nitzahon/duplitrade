@@ -20,8 +20,9 @@ div{
     grid-template-columns: 1fr 1039px 335px 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      ". header button-box ."
+      ". header buttonbox ."
       ". graphframe buttonbox ."
+      ". . buttonbox ."
       "footer footer footer footer";
     column-gap: 17px;
     row-gap: 21px;

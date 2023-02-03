@@ -4,11 +4,7 @@
 
 @media only screen and (min-width: 992px) {
   .button-box {
-    /* position:fixed; */
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-area: buttonbox;
     width: 335px;
     min-height: 315px;
     height: fit-content;
@@ -17,7 +13,42 @@
     align-items: center;
     padding: 20px 13px;
     gap: 15px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+  }
+  div.signup {
+    background-color: #31a060;
+    color: #ffffff;
+    max-height: 50px;
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    flex-grow: 1;
+    flex-basis: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15px;
+  }
+  div.drawer {
+    background-color: #31a060;
+    color: #ffffff;
+    /* max-height: 50px; */
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    flex-grow: 1;
+    flex-basis: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15px;
   }
 }
 @media only screen and (max-width: 991px) {
