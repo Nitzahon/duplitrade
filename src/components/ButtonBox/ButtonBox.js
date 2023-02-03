@@ -1,6 +1,7 @@
 import React from 'react'
 import "./ButtonBox.css"
-// import {ReactComponent as DirectCopyVector} from './images/directCopyVector.svg';
+import {ReactComponent as DirectCopyVector} from '../../images/svg/directCopyVector.svg';
+import DrawerButton from './DrawerButton';
 // import directCopyVector from './images/directCopyVector.svg';
 function ButtonBox() {
   return (
@@ -12,6 +13,7 @@ function ButtonBox() {
        {/* <DirectCopyVector/> */}
        {/* <img src={directCopyVector}/> */}
        <div className='signup'><span>Sign Up</span></div>
+       <DrawerButton svgComponent={<DirectCopyVector className="dcVector"/>} text={'Direct Copy'}/>
        <div className='drawer'>Sign Up</div>
        <div className='drawer'>Sign Up</div>
        <div className='drawer'>Sign Up</div>
