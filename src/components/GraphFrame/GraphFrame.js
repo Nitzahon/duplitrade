@@ -1,88 +1,43 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import Chart from 'chart.js/auto';
 
-// import { Line } from 'react-chartjs-2';
 // import { faker } from '@faker-js/faker';
 
 import './GraphFrame.css'
+import ResponsiveGraph from './ResponsiveGraph';
 function GraphFrame() {
+  const [bool, setBool] = useState(true);
   const tabs = useSelector((state) => state.graphframe.tabs);
   const activeTab = useSelector((state) => state.graphframe.activeTab);
-  const yAxis = useSelector((state)=>state.graphframe.yAxis)
+  // const yAxis = Array.from(
+  //   { length: (stop - start) / step + 1 },
+  //   (value, index) => start + index * step
+  //   ); 
+    // useSelector((state) => state.graphframe.yAxis)
+  const xAxis = ["Jan'11", "Mar'11", "May'11"];
+  const isMobileScreen = useSelector((state) => state.broker.isMobile)
+  const [start, setStart] = useState(isMobileScreen? 49.750:-400);
+  const [stop, setStop] = useState(isMobileScreen? 51.00:1000);
+  const [step, setStep] = useState(isMobileScreen? .250:200);
+
+  const [xAxisRep, setxAxisRep] = useState(isMobileScreen ? 1 : 3);
   const dispatch = useDispatch();
+  const swap = useCallback(() => {
+    setBool(current => !current);
+  }, [setBool])
   const activate = useCallback(
     (index) => () => {
       dispatch({ type: 'graphframe/tabActive', payload: index })
     },
     [dispatch],
   )
+  useEffect(() => {
+    setxAxisRep(isMobileScreen ? 1 : 3);
+    setStart(isMobileScreen? 49.750:-400);
+    setStop(isMobileScreen? 51.00:1000);
+    setStep(isMobileScreen? .250:200);
+  }, [isMobileScreen, setxAxisRep]);
 
-  // const labels = ['Jan\'11', 'Mar\'11', 'May\'11', 'Jan\'11', 'Mar\'11', 'May\'11', 'Jan\'11', 'Mar\'11'];
-
-  // const options = {
-  //   responsive: true,
-  //   showXLabels: 6,
-  //   plugins: {
-  //     legend: {
-  //       display: false,
-
-  //     },
-  //     title: {
-  //       display: false,
-  //       text: 'Chart.js Line Chart',
-  //     },
-  //   },
-  // };
-  // const data = {
-  //   labels,
-  //   datasets: [
-  //     {
-  //       label: 'Dataset 1',
-  //       pointStyle: 'rect',
-
-  //       // data: datasetRed,
-  //       borderColor: 'rgb(255, 99, 132)',
-  //       backgroundColor: 'rgba(255, 99, 132, 0.5)',
-  //     },
-  //     {
-  //       fill: 'start',
-  //       pointStyle: 'circle',
-  //       label: 'Dataset 2',
-  //       data: datasetBlue,
-  //       borderColor: 'rgb(53, 162, 235)',
-  //       backgroundColor: 'rgba(53, 162, 235, 0.5)',
-  //     },
-  //   ],
-  //   scales: {
-  //     xAxes: [{
-  //       type: 'time',
-  //       ticks: {
-  //           autoSkip: true,
-  //           maxTicksLimit: 20
-  //       }
-  //   }],
-  //     y: {
-  //       // ticks: {
-  //       //   // Include a dollar sign in the ticks
-  //       //   callback: function (value, index, ticks) {
-  //       //     console.log(value, index);
-  //       //     let retValue = '';
-  //       //     if (value !== 0) {
-  //       //       retValue = '$' + retValue
-
-  //       //       if (value < 0) {
-  //       //         retValue = '-' + retValue;
-  //       //       }
-  //       //     }
-  //       //     console.log(retValue);
-  //       //     return retValue + Math.abs(value).toLocaleString();
-  //       //   }
-  //       // }
-  //       ticks: ['-400$','-200$','0','200$','400$','600$','800$','1000$']
-  //     }
-  //   },
-  // };
   return (
     <div className='graphframe'>
       <div className='graph-tabs'>
@@ -94,13 +49,32 @@ function GraphFrame() {
       </div>
       <div className='graph-body'>
         <div className='y-axis'>
-          {yAxis.map(label=>{
-            return<div className='y-axis-label'>{label}</div>
+          {Array.from(
+    { length: (stop - start) / step + 1 },
+    (value, index) => {let val = (start + index * step);  return `${val<0?'-':''}${!isMobileScreen&&val!==0?'$':''}${Math.abs(val).toLocaleString()}`}
+    ).map((label, index) => {
+            return <div key={index} className='y-axis-label'>{label}</div>
           })}
         </div>
-        <img className='graph-img' src={process.env.PUBLIC_URL + '/images/image 7.png'} alt='graph'/>
-        <div className='x-axis'></div>
-        {/* <Line options={options} data={data} /> */}
+        {bool ?
+          <img className='graph-img' src={`/images/image7${isMobileScreen ? 'small' : ''}.png`} alt='graph' onClick={swap} />
+          : <div className='graph-img' onClick={swap}>
+            <ResponsiveGraph mobile={isMobileScreen}/>
+          </div>}
+        <div className='x-axis'>
+          {Array(xAxisRep).fill(xAxis).map((labelTrio, index) => {
+            return <div className='label-trio' key={index}>
+              {labelTrio.map((xLabel, index) => {
+                return <div className='x-label-box' key={index}>
+                  <div className='x-label-line' />
+                  <span className='x-label'>
+                    {xLabel}
+                  </span>
+                </div>
+              })}
+            </div>
+          })}
+        </div>
       </div>
     </div>
   )

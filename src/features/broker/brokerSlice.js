@@ -13,18 +13,19 @@ const initialState = {
     floating: 53.44,
     equity: 50183.82,
     margin: 53.44
-  }
+  },
+  isMobile: window.innerWidth<992 //put mobile test here to not make an extra slice for it
 }
 
 const brokerSlice = createSlice({
   name: 'broker',
   initialState,
   reducers: {
-    test: (state, action)=>{
-
+    mobileUpdate: (state, action)=>{
+      state.isMobile=action.payload
     }
   }
 })
 
-export const {} = brokerSlice.actions
+export const {mobileUpdate} = brokerSlice.actions
 export default brokerSlice

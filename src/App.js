@@ -2,18 +2,49 @@ import './App.css';
 
 import GraphFrame from './components/GraphFrame/GraphFrame';
 import Header from './components/Header/Header';
-import Hugbox from './components/Hugbox/Hugbox';
-import dataly from './constants/data.json';
-function App() {
+import ButtonBox from './components/ButtonBox/ButtonBox';
+import { isMobile } from 'react-device-detect';
 
-  const data = dataly;
- 
+import { useDispatch, useSelector } from 'react-redux'
+import { useCallback, useEffect, useRef } from 'react';
+function App() {
+  const isMobileScreen = useSelector((state) => state.broker.isMobile)
+  const dispatch = useDispatch();
+  const tO = useRef(false);
+  const handleResize =  useCallback(
+    () => {
+      let screenWidth = window.innerWidth;
+      if (!isMobile) {
+        if (!isMobileScreen && screenWidth < 992) {
+          dispatch({ type: 'broker/mobileUpdate', payload: true })
+        } else if (isMobileScreen && screenWidth >= 992) { 
+          dispatch({ type: 'broker/mobileUpdate', payload: false })
+        }
+      }
+    }
+    ,
+    [ isMobileScreen, dispatch ],
+  )
+  //prevent resize from firing more than 10 times a second
+  useEffect(() => {
+    let resEvent = () => {
+      if(tO.current !== false){
+        clearTimeout(tO.current);
+      }
+      tO.current = setTimeout(handleResize, 25)
+    } 
+    window.addEventListener("resize", resEvent, false);
+    return () => {
+      window.removeEventListener("resize",resEvent,false)
+    }
+  }, [handleResize]);
+  
   return (
     <div className="App">
       <div className='container'>
-        <Header/>
-      <Hugbox />
-      <GraphFrame/>
+        <Header />
+        <ButtonBox />
+        <GraphFrame />
       </div>
     </div>
   );

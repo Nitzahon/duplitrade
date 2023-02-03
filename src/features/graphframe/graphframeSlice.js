@@ -12,7 +12,6 @@ const graphframeSlice = createSlice({
     initialState,
     reducers: {
         tabActive: (state, action)=> {
-            console.log('paylod', action.payload);
             state.activeTab = action.payload;
         }
     },

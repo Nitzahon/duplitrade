@@ -58,14 +58,15 @@
     grid-template-areas:
       "yaxis graphbody"
       ". xaxis";
+      overflow-x: hidden;
   }
   .y-axis {
     grid-area: yaxis;
     display: flex;
-    flex-flow:column-reverse;
+    flex-flow: column-reverse;
     justify-content: center;
-    gap:29.42px;
-    width:32px;
+    gap: 29.42px;
+    width: 32px;
     align-items: flex-start;
     justify-self: flex-end;
     margin-right: 4.1px;
@@ -77,10 +78,51 @@
   }
   .graph-img {
     grid-area: graphbody;
+    position: relative;
+  }
+  /* src={process.env.PUBLIC_URL + '/images/image 7.png'} */
+
+  .graph-img canvas{
+    position: absolute;
+    height: 102%!important;
+    width: 102%!important;
+    transform: translate(-1%, -.5%);
   }
   .x-axis {
-    background-color: aquamarine;
     grid-area: xaxis;
+    display: flex;
+    flex-flow: row;
+    gap: 27.7px;
+    padding-inline: 7px;
+    margin-top: .03px;
+    /* flex-wrap: ; */
+  }
+  .label-trio {
+    display: flex;
+    flex-flow: row;
+    min-width: 332.3px;
+    border-top: 1.39039px solid #E9ECEF;
+    justify-content:space-between;
+    font-weight: 400;
+    font-size: 11.1231px;
+    line-height: 15px;
+    text-align: right;
+    padding: 0 18px;
+  }
+  .x-label-box{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:7.66px
+  }
+  .x-label-line{
+    height:7.66px;
+    border: 1.39039px solid #E9ECEF;
+
+  }
+  .x-label {
+    color: #5c5c5c;
   }
 }
 @media only screen and (max-width: 991px) {

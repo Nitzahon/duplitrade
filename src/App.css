@@ -8,7 +8,11 @@ body {
   background-color: #f5f5f5;
 
 }
-
+div{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
 @media only screen and (min-width: 992px) {
   .container {
     padding-top: 130px;
@@ -16,8 +20,8 @@ body {
     grid-template-columns: 1fr 1039px 335px 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      ". header hugbox ."
-      ". graphframe . ."
+      ". header button-box ."
+      ". graphframe buttonbox ."
       "footer footer footer footer";
     column-gap: 17px;
     row-gap: 21px;

@@ -1,0 +1,27 @@
+.button-box {
+  background-color: red;
+}
+
+@media only screen and (min-width: 992px) {
+  .button-box {
+    /* position:fixed; */
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 335px;
+    min-height: 315px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 13px;
+    gap: 15px;
+    background-color: #FFFFFF;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .button-box {
+    display: none;
+  }
+}
