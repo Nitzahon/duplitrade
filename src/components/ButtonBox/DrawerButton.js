@@ -1,27 +1,13 @@
-import React, { useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
 import { ReactComponent as CevronDownVector } from '../../images/svg/chevron-down.svg';
-function DrawerButton(props) {
-  const active = useSelector((state)=>state.buttonbox.active[props.index])
-  const dispatch = useDispatch();
-  const drawer = useCallback(
-    () => {
-      console.log(props.enabled);
-      if(props.enabled){
-      dispatch({type: 'buttonbox/activeUpdate', payload: {index:props.index, state:!active}})
-      }
-    },
-    [dispatch, props.index, active, props.enabled],
-  )
-  
+function DrawerButton({ active, text, children}) {
   return (
-    <div className='drawer' onClick={drawer}>
+    <div className='drawer'>
       <div className={`vectorbox ${active?'fill-yellow':'fill-blue'}`}>
-        {props.children}
+        {children}
       </div>
-      <span className='drawer-text'>{props.text}</span>
+      <span className='drawer-text'>{text}</span>
       <CevronDownVector className={`dcVectorstroke ${active?'chev-up stroke-yellow':'chev-down stroke-blue'}`}  />
-
     </div>
   )
 }

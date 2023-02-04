@@ -10,7 +10,7 @@ function CopyButton({selected, copied, id}) {
     const select = useCallback(
       () => {
         dispatch({ type: 'table/select', payload: {stratType:(isMobile? 'mobile':'regular'), index:id, state:!selected }})
-
+        dispatch({type: 'buttonbox/active', payload:!selected})
       },
       [dispatch,id,isMobile,selected],
     )

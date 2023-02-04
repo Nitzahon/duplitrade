@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
-  active:[false,false,false]
+  active:false
 }
 
 const buttonboxSlice = createSlice({
   name: 'buttonbox',
   initialState,
   reducers: {
-    activeUpdate: (state, action)=>{
-      state.active[action.payload.index]=action.payload.state
+    active: (state, action)=>{
+      state.active=action.payload
     }
   }
 })
 
-export const {activeUpdate} = buttonboxSlice.actions
+export const {active} = buttonboxSlice.actions
 export default buttonboxSlice
