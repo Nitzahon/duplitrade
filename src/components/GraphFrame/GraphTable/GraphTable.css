@@ -1,0 +1,202 @@
+@media only screen and (min-width: 721px) {
+  /* .graph-strategy-table{
+        display:flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        width: 100%;
+        background-color: #FFFFFF;
+        padding: 20px 20px 0 14px;
+        display: grid;
+        grid-template-columns: repeat(12,auto);
+
+        
+    } */
+  .panel-body {
+    height: 496.42px;
+    /* border: 1px solid red; */
+    background-color: #ffffff;
+  }
+  .graph-strategy-table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 14px;
+  }
+  .graph-strategy-table .graph-strategy-header {
+    line-height: 19px;
+    color: #adadad;
+  }
+  .graph-strategy-table .graph-strategy-header {
+    height: 44px; /* Fixed Row Height */
+    /* border-bottom: 1.83228px solid #dadfe5; */
+    padding-top: 20px;
+  }
+  .graph-strategy-row {
+    height: 37px; /* Fixed Row Height */
+    padding: 0 18px 0 15px;
+  }
+
+  .graph-strategy-row.body-row .grid-col:first-child {
+    font-weight: 600;
+    line-height: 120%;
+    color: #333333;
+  }
+  .graph-strategy-table .graph-strategy-row {
+    display: block;
+  }
+  .graph-strategy-table .graph-strategy-header {
+    margin-right: 0px;
+  }
+  /* table.graph-strategy-table tbody {
+    flex: 1;
+    overflow-y: hidden;
+  } */
+  .graph-strategy-table .graph-strategy-row {
+    width: 100%;
+    display: flex;
+  }
+  .graph-strategy-table .graph-strategy-row .grid-col,
+  .graph-strategy-table .graph-strategy-header .grid-col {
+    display: flex;
+    flex: 1;
+    /* flex-grow: 1; */
+    /* flex-basis: fit-content; */
+    /* width: fit-content; */
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5px;
+  }
+  .graph-strategy-table .graph-strategy-header .grid-col-11,
+  .graph-strategy-table .graph-strategy-row .grid-col-11 {
+    flex-grow: 1.8;
+  }
+  .graph-strategy-table .graph-strategy-row .grid-col:last-child {
+    justify-content: flex-end;
+  }
+  .net-negative {
+    color: #f53f3f;
+  }
+  .net-positive {
+    color: #31a060;
+  }
+  .border-seperator {
+    /* width:955; */
+    margin-right: 25px;
+  }
+  .border-seperator.header-seperator,
+  .border-seperator.footer-seperator {
+    border-bottom: 1.83228px solid #dadfe5;
+  }
+  .border-seperator.row-seperator {
+    border-top: 1px solid #e9ecef;
+  }
+  .selected-row {
+    background-color: #fdf5e6;
+  }
+  .copy-button-box {
+    height: 28px;
+    width: 28px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .copy-button-box.vector-gray {
+    background-color: #e9ecef;
+  }
+  .copy-button-box.vector-green {
+    background-color: #31a060;
+  }
+  .copy-button-box.vector-gray > svg {
+    fill: #858585;
+  }
+  .copy-button-box.vector-yellow > svg {
+    fill: #ffa800;
+  }
+  .graph-strategy-footer {
+    padding: 15px;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .page-bar {
+    display: flex;
+    flex-flow: row;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    font-size: 14px;
+    line-height: 120%;
+
+    letter-spacing: 0.01em;
+  }
+  .page-bar > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  .page-arrow > svg {
+    stroke: #c1e3cf;
+  }
+  .page-arrow.active > svg {
+    stroke: #31a060;
+  }
+  .page-number-box {
+    width: 24px;
+    height: 24px;
+  }
+  .page-number-box.active {
+    color: #31a060;
+  }
+  .arrow-back {
+    transform: rotate(90deg);
+  }
+  .arrow-forward {
+    transform: rotate(-90deg);
+  }
+  .select-container{
+    display: flex;
+    flex-flow: row;
+    position: absolute;
+    left: 15px;;
+    font-size: 12px;
+    line-height: 14px;
+    gap: 8px;
+    align-items: center;
+
+letter-spacing: 0.01em;
+
+color: #5C5C5C;
+  }
+  .select-container img{
+    background: #FFFFFF;
+/* System/Light/60% */
+
+border: 1px solid #E9ECEF;
+border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .graph-strategy-table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* font-size: 14px; */
+    gap: 3.125vw;
+  }
+
+  .graph-strategy-footer,
+  .graph-strategy-header,
+  .row-seperator,
+  .footer-seperator {
+    display: none;
+  }
+}

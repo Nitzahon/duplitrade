@@ -14,7 +14,7 @@ const initialState = {
     equity: 50183.82,
     margin: 53.44
   },
-  isMobile: window.innerWidth<992 //put mobile test here to not make an extra slice for it
+  isMobile: window.innerWidth<721 //put mobile test here to not make an extra slice for it
 }
 
 const brokerSlice = createSlice({

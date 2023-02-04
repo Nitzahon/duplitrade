@@ -15,9 +15,9 @@ function App() {
     () => {
       let screenWidth = window.innerWidth;
       if (!isMobile) {
-        if (!isMobileScreen && screenWidth < 992) {
+        if (!isMobileScreen && screenWidth < 721) {
           dispatch({ type: 'broker/mobileUpdate', payload: true })
-        } else if (isMobileScreen && screenWidth >= 992) { 
+        } else if (isMobileScreen && screenWidth >= 721) { 
           dispatch({ type: 'broker/mobileUpdate', payload: false })
         }
       }

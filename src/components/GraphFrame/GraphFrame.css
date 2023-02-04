@@ -1,10 +1,9 @@
 .graphframe {
   background: #f8f9fa;
-  border-radius: 4px;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 721px) {
   .graphframe {
     grid-area: graphframe;
     min-height: 300;
@@ -12,6 +11,8 @@
     display: flex;
     flex-flow: column;
     gap: 39px;
+    border-radius: 4px;
+
   }
   .graph-tabs {
     display: flex;
@@ -46,88 +47,16 @@
     border-radius: 0px;
     color: #858585;
   }
-  .graph-body {
-    width: 980px;
-    height: 424px;
-
-    background: #ffffff;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 1fr 930px;
-    grid-template-rows: 369px 1fr;
-    grid-template-areas:
-      "yaxis graphbody"
-      ". xaxis";
-      overflow-x: hidden;
-  }
-  .y-axis {
-    grid-area: yaxis;
-    display: flex;
-    flex-flow: column-reverse;
-    justify-content: center;
-    gap: 29.42px;
-    width: 32px;
-    align-items: flex-start;
-    justify-self: flex-end;
-    margin-right: 4.1px;
-  }
-  .y-axis-label {
-    font-weight: 400;
-    font-size: 11.1231px;
-    line-height: 15px;
-  }
-  .graph-img {
-    grid-area: graphbody;
-    position: relative;
-  }
-  /* src={process.env.PUBLIC_URL + '/images/image 7.png'} */
-
-  .graph-img canvas{
-    position: absolute;
-    height: 102%!important;
-    width: 102%!important;
-    transform: translate(-1%, -.5%);
-  }
-  .x-axis {
-    grid-area: xaxis;
-    display: flex;
-    flex-flow: row;
-    gap: 27.7px;
-    padding-inline: 7px;
-    margin-top: .03px;
-    /* flex-wrap: ; */
-  }
-  .label-trio {
-    display: flex;
-    flex-flow: row;
-    min-width: 332.3px;
-    border-top: 1.39039px solid #E9ECEF;
-    justify-content:space-between;
-    font-weight: 400;
-    font-size: 11.1231px;
-    line-height: 15px;
-    text-align: right;
-    padding: 0 18px;
-  }
-  .x-label-box{
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap:7.66px
-  }
-  .x-label-line{
-    height:7.66px;
-    border: 1.39039px solid #E9ECEF;
-
-  }
-  .x-label {
-    color: #5c5c5c;
-  }
+  
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 720px) {
   .graphframe {
     width: 100%;
+    border-radius: 1.25vw;
+    display: flex;
+    flex-flow: column;
+    gap: 6.25vw;
+
   }
   .graph-tabs,
   .graph-tab {

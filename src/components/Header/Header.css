@@ -2,7 +2,7 @@
     
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 721px) {
     .header{
         border-radius: 4px;
         background: #F8F9FA;
@@ -11,7 +11,7 @@
 
     }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 720px) {
     .header{
         width: 100%;
 

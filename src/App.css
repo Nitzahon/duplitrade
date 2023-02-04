@@ -13,7 +13,7 @@ div{
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 721px) {
   .container {
     padding-top: 130px;
     display: grid;
@@ -28,11 +28,12 @@ div{
     row-gap: 21px;
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 720px) {
   .container {
     display: flex;
     flex-flow: column;
     margin: 15.6vw 6.25vw;
+    gap:6.25vw;
 
   }
 }

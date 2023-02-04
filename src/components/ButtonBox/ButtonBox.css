@@ -2,7 +2,7 @@
   background-color: red;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 721px) {
   .button-box {
     grid-area: buttonbox;
     width: 335px;
@@ -15,16 +15,18 @@
     gap: 15px;
     background-color: #ffffff;
     flex-wrap: wrap;
+    font-weight: 600;
   }
-  div.signup {
+  .button-box > :first-child {
+    max-height: 50px;
+  }
+  .signup {
     background-color: #31a060;
     color: #ffffff;
-    max-height: 50px;
     border: 0;
     border-radius: 0;
     width: 100%;
     flex-grow: 1;
-    flex-basis: 100%;
     font-size: 18px;
     line-height: 25px;
     letter-spacing: 0.01em;
@@ -33,9 +35,9 @@
     align-items: center;
     padding: 0 15px;
   }
-  div.drawer {
-    background-color: #31a060;
-    color: #ffffff;
+  .button-box .drawer {
+    background-color: #ffffff;
+    color: #000000;
     /* max-height: 50px; */
     border: 0;
     border-radius: 0;
@@ -48,10 +50,50 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 9px 0 17.5px;
+    gap: 1px;
+    justify-content: space-around;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #5c5c5c;
+  }
+  .drawer > .vectorbox{
+    width: 31px;
+    height: 31px;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .drawer > .drawer-text {
+    width:249px;
+    text-align: start;
+  }
+  .fill-yellow svg{
+    fill: #FFA800;
+  }
+  .fill-blue svg{
+    fill: #568CF3
+  }
+  .stroke-yellow{
+    stroke: #FFA800;
+  }
+  .stroke-blue{
+    stroke: #568CF3
+  }
+  .stroke-green{
+
+  }
+  .chev-up{
+    transform: rotate(180deg);
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 720px) {
   .button-box {
     display: none;
   }
