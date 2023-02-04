@@ -2,7 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit'
 
 import brokerSlice from './features/broker/brokerSlice'
 import graphframeSlice from './features/graphframe/graphframeSlice'
-import buttonboxSlice from './features/buttonbox/buttonboxSlice'
+import sidebarSlice from './features/sidebar/sidebarSlice'
 import tableSlice from './features/table/talbeSlice'
 const rootReducer = combineReducers({
 
@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
     broker: brokerSlice.reducer,
     // For both reducers, we only pass in their slice of the state
     graphframe: graphframeSlice.reducer,
-    buttonbox: buttonboxSlice.reducer,
+    sidebar: sidebarSlice.reducer,
     table: tableSlice.reducer
 })
 

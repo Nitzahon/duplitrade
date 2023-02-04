@@ -2,7 +2,7 @@ import './App.css';
 
 import GraphFrame from './components/GraphFrame/GraphFrame';
 import Header from './components/Header/Header';
-import ButtonBox from './components/ButtonBox/ButtonBox';
+import SideBar from './components/SideBar/SideBar';
 import { isMobile } from 'react-device-detect';
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       <div className='container'>
         <Header />
-        <ButtonBox />
+        <SideBar />
         <GraphFrame />
       </div>
     </div>

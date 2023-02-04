@@ -3,8 +3,8 @@ const initialState = {
   active:false
 }
 
-const buttonboxSlice = createSlice({
-  name: 'buttonbox',
+const sidebarSlice = createSlice({
+  name: 'sidebar',
   initialState,
   reducers: {
     active: (state, action)=>{
@@ -13,5 +13,5 @@ const buttonboxSlice = createSlice({
   }
 })
 
-export const {active} = buttonboxSlice.actions
-export default buttonboxSlice
+export const {active} = sidebarSlice.actions
+export default sidebarSlice

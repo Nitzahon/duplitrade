@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import "./ButtonBox.css"
+import "./SideBar.css"
 import { ReactComponent as DirectCopyVector } from '../../images/svg/directCopyVector.svg';
 import { ReactComponent as ActiveateVector } from '../../images/svg/activate.svg';
 import { ReactComponent as NotifyVector } from '../../images/svg/notify.svg';
@@ -8,15 +8,15 @@ import DrawerButton from './DrawerButton';
 import { useDispatch, useSelector } from 'react-redux';
 import CopyBox from './CopyBox/CopyBox';
 // import directCopyVector from './images/directCopyVector.svg';
-function ButtonBox() {
-  const active = useSelector((state)=>state.buttonbox.active);
+function SideBar() {
+  const active = useSelector((state)=>state.sidebar.active);
   const index = useSelector((state)=>state.table.selectedIndex);
   const selected = useSelector((state)=>state.table.strategies.regular[index]);
   const dispatch = useDispatch();
   const drawer = useCallback(
     () => {
       if(index || index===0){
-        dispatch({type: 'buttonbox/active', payload: !active})
+        dispatch({type: 'sidebar/active', payload: !active})
       }
     },
     [dispatch, active, index],
@@ -46,4 +46,4 @@ function ButtonBox() {
   )
 }
 
-export default ButtonBox
+export default SideBar
