@@ -6,7 +6,7 @@ import { ReactComponent as NotifyVector } from '../../images/svg/notify.svg';
 
 import DrawerButton from './DrawerButton';
 import { useDispatch, useSelector } from 'react-redux';
-import CopyBox from './CopyBox/CopyBox';
+import CopyBox from '../CopyBox/CopyBox';
 // import directCopyVector from './images/directCopyVector.svg';
 function SideBar() {
   const active = useSelector((state)=>state.sidebar.active);
@@ -40,7 +40,7 @@ function SideBar() {
       <DrawerButton index={2} text={"Direct Copy"} active={active && selected} >
         <DirectCopyVector className='dcVectorfill' />  
       </DrawerButton>
-      {active && selected && <CopyBox strat={selected}/>}
+      {active && selected && <CopyBox id={index} strat={selected} close={drawer} />}
       </div>
     </div>
   )
