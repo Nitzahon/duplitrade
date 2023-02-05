@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import CopyButton from './CopyButton';
+import CopyButton from './CopyButtons/CopyButton';
 
 function TableRow({selected, strat, id }) {
     const header = useSelector(state=> state.table.header);

@@ -65,6 +65,7 @@ const tableSlice = createSlice({
             state.strategies[action.payload.stratType][action.payload.index].selected = action.payload.state;
         },
         copied:(state, action)=> {
+            console.log('test');
             state.strategies[action.payload.stratType][action.payload.index].copied = action.payload.state;
         },
         page:(state, action)=> {

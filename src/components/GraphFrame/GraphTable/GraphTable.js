@@ -31,9 +31,9 @@ function GraphTable() {
                 </div>
                 <div className='border-seperator header-seperator'></div>
                 {startegies[(isMobile ? 'mobile' : 'regular')].map((val, index) => {
-                    return (isMobile ? <TableCard key={index} strat={val} /> : <div key={index}>
+                    return (isMobile ? <TableCard key={index} id={index} strat={val} /> : <div key={index}>
                         {index !== 0 ? <div className='border-seperator row-seperator'></div> : <></>}
-                        <TableRow id={index} strat={{ ...val, id: index }} selected={selectedIndex === index} />
+                        <TableRow id={index} strat={{ ...val }} selected={selectedIndex === index} />
 
                     </div>)
                 })}

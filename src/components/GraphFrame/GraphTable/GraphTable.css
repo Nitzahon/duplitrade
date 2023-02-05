@@ -1,3 +1,4 @@
+
 @media only screen and (min-width: 721px) {
   /* .graph-strategy-table{
         display:flex;
@@ -102,13 +103,14 @@
     justify-content: center;
     align-items: center;
   }
-
+  .copy-button-box>svg{
+    width:17px;
+    height:17px;
+  }
   .copy-button-box.vector-gray {
     background-color: #e9ecef;
   }
-  .copy-button-box.vector-green {
-    background-color: #31a060;
-  }
+ 
   .copy-button-box.vector-gray > svg {
     fill: #858585;
   }
@@ -161,26 +163,26 @@
   .arrow-forward {
     transform: rotate(-90deg);
   }
-  .select-container{
+  .select-container {
     display: flex;
     flex-flow: row;
     position: absolute;
-    left: 15px;;
+    left: 15px;
     font-size: 12px;
     line-height: 14px;
     gap: 8px;
     align-items: center;
 
-letter-spacing: 0.01em;
+    letter-spacing: 0.01em;
 
-color: #5C5C5C;
+    color: #5c5c5c;
   }
-  .select-container img{
-    background: #FFFFFF;
-/* System/Light/60% */
+  .select-container img {
+    background: #ffffff;
+    /* System/Light/60% */
 
-border: 1px solid #E9ECEF;
-border-radius: 3px;
+    border: 1px solid #e9ecef;
+    border-radius: 3px;
   }
 }
 
@@ -189,7 +191,6 @@ border-radius: 3px;
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* font-size: 14px; */
     gap: 3.125vw;
   }
 
@@ -198,5 +199,160 @@ border-radius: 3px;
   .row-seperator,
   .footer-seperator {
     display: none;
+  }
+  .card-container {
+    background: #ffffff;
+    border-radius: 1.25vw;
+    padding: 4.69vw;
+    display: flex;
+    flex-flow: column;
+    gap: 3.125vw;
+    width: 100%;
+    /* align-items: center; */
+  }
+  .card-container > .card-header,
+  .card-container > .row,
+  .card-container > .beta-row {
+    display: flex;
+    flex-flow: row;
+    /* justify-content: flex-start; */
+    flex: 1;
+    border-bottom: 1px solid #dadfe5;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 7.5vw;
+  }
+
+  .header-flex-start {
+    width: 37.5vw;
+    display: flex;
+    flex-flow: row;
+    gap: 3.125vw;
+  }
+  .header-flex-start > .strategy-title {
+    color: #568cf3;
+    display: flex;
+    flex-flow: row;
+    gap: 2.34vw;
+    font-weight: 600;
+    font-size: 4.375vw;
+    line-height: 120%;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+  }
+  .header-flex-start > .symbol {
+    font-weight: 400;
+    font-size: 4.375vw;
+    line-height: 140%;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #333333;
+  }
+  .card-header > div:last-child {
+    font-weight: 600;
+    font-size: 4.375vw;
+    line-height: 120%;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.01em;
+
+    /* System/Dark/100% */
+
+    color: #333333;
+  }
+
+  .row > div:first-child,
+  .beta-row.row-net-pl > .row-text {
+    font-weight: 600;
+    font-size: 4.375vw;
+    line-height: 120%;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+
+    /* System/Dark/100% */
+
+    color: #333333;
+  }
+  .row-net-pl > .row-data {
+    font-weight: 600;
+    font-size: 4.375vw;
+    line-height: 120%;
+
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    letter-spacing: 0.01em;
+
+    /* Accent/Red/100% */
+  }
+  .row-net-pl > .row-data.negative {
+    color: #f53f3f;
+  }
+  .row-net-pl > .row-data.positive {
+    color: #31a060;
+  }
+  .row > div:last-child {
+    font-weight: 400;
+    font-size: 4.375vw;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.01em;
+    color: #5c5c5c;
+  }
+
+  .row-open-time > div:first-child {
+    text-align: left;
+  }
+  .row-open-time > div:last-child {
+    flex-shrink: 0;
+  }
+  .copy-button {
+  }
+  .copy-button-box {
+    height: 12.5vw;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125vw;
+    border-radius: 0.63vw;
+    /* border-bottom: 0; */
+  }
+  .vector-gray {
+    background: #dadfe5;
+    fill: #858585;
+    color: #858585;
+  }
+  .vector-yellow{
+    background-color: #FFF6E6;
+    color:#FFA800;
+    /* stroke:#FFA800; */
+    fill: #FFA800;
+  }
+  .vector-green{
+    background: #C1E3CF;
+    color: #31A060;
+    fill: #31A060;
+  }
+  .copy-button-box>svg{
+    height:4.375vw;
+    width:4.375vw;
+  }
+  .copy-button-text {
+    font-weight: 600;
+    font-size: 4.375vw;
+    line-height: 120%;
+
+    letter-spacing: 0.01em;
+
   }
 }

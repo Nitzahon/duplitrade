@@ -48,7 +48,7 @@ function CopyBox({ id, strat, close }) {
             <div className='lose-trade'>560 Trades</div>
           </div>
           <div className='warning-box'>
-            <i className="fa-solid fa-circle-info icon-info" />
+            <i className={`fa-solid fa-circle-info  icon-info` }/>
             <span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             </span>
@@ -57,9 +57,9 @@ function CopyBox({ id, strat, close }) {
       </div>
       <div className='lot-size-text'>Select Lot Size</div>
       <div className='lot-size-select'>
-        <div className={`size-change size-decrease ${ready ? 'ready' : ''}`} onClick={(e) => { e.preventDefault(); if (ready && lotSize > 0) setLotSize(lotSize - 1) }}><i className="fa-solid fa-minus fa-lg"></i></div>
+        <div className={`size-change size-decrease ${ready ? 'ready' : ''}`} onClick={(e) => { e.preventDefault(); if (ready && lotSize > 0) setLotSize(lotSize - 1) }}><i className={`fa-solid fa-minus ${isMobile?'plus-minus-overide':'fa-lg'}`}></i></div>
         <span>{(lotSize / 100).toFixed(2)}</span>
-        <div className={`size-change size-decrease ${ready ? 'ready' : ''}`} onClick={(e) => { e.preventDefault(); if (ready) setLotSize(lotSize + 1) }}><i className="fa-solid fa-plus fa-lg"></i></div>
+        <div className={`size-change size-decrease ${ready ? 'ready' : ''}`} onClick={(e) => { e.preventDefault(); if (ready) setLotSize(lotSize + 1) }}><i className={`fa-solid fa-plus ${isMobile?'plus-minus-overide':'fa-lg'}`}></i></div>
       </div>
       {!ready || strat.copied ?
         <div className='legal-info-slide'>
@@ -77,18 +77,18 @@ function CopyBox({ id, strat, close }) {
           <div className='success-details'>
             TicketID #{strat.copied.ticket}<br />
             {strat['Buy/Sell']} {(strat.copied.lotSize / 100).toFixed(2)} {strat.Symbol}<br />
-            P/L {`${strat['Net P/L'] < 0 ? '-' : ''}${(symbols[strat.Symbol])}${strat['Net P/L']}`}
+            {isMobile?'':<>P/L {`${strat['Net P/L'] < 0 ? '-' : ''}${(symbols[strat.Symbol])}${strat['Net P/L']}`}</>}
           </div>
         </div>
         :
         (ready ? <div className='market-execution' onClick={sendToBroker}>
           <div className='market-execution-text'>
             <span className='market-execution-title'>Market Execution</span>
-            <span className='market-execution-details'>{strat["Buy/Sell"]} {(lotSize / 100).toFixed(2)}</span>
+            <span className='market-execution-details'>{strat["Buy/Sell"]}{isMobile?'':`${(lotSize / 100).toFixed(2)}`}</span>
           </div>
         </div> :
           <div className='sending-button'>
-              <i class="fa-sharp fa-solid fa-circle-notch spinner broker-spinner"></i>
+              <i className="fa-sharp fa-solid fa-circle-notch spinner broker-spinner"></i>
               <span>Sent to the broker</span>
           </div>)
       }
