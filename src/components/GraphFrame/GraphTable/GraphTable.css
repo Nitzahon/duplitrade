@@ -184,6 +184,11 @@
     border: 1px solid #e9ecef;
     border-radius: 3px;
   }
+  .vector-green{
+    background: #31A060;
+    color: #31A060;
+    fill: #FFFFFF;
+  }
 }
 
 @media only screen and (max-width: 720px) {
