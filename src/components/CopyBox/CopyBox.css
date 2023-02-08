@@ -278,7 +278,7 @@
 
 }
 @media only screen and (max-width: 720px) {
-}
+
 .copy-box {
   display: flex;
   flex-flow: column;
@@ -577,7 +577,7 @@
   font-size:6.25vw;
   line-height: 6.25vw;
 }
-
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .spinner {
